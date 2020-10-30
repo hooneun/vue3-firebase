@@ -2,13 +2,13 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyDHNnJl7ap2MQoyH0F6eRVQSTZKiQ3COYw',
-	authDomain: 'hwitter-4d7bc.firebaseapp.com',
-	databaseURL: 'https://hwitter-4d7bc.firebaseio.com',
-	projectId: 'hwitter-4d7bc',
-	storageBucket: 'hwitter-4d7bc.appspot.com',
-	messagingSenderId: '444271188546',
-	appId: '1:444271188546:web:33d08f4105b1284ba5ebdb'
+	apiKey: import.meta.env.VITE_API_KEY,
+	authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+	databaseURL: import.meta.env.VITE_DATABASE_URL,
+	projectId: import.meta.env.VITE_PROJECT_ID,
+	storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+	appId: import.meta.env.VITE_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig);
