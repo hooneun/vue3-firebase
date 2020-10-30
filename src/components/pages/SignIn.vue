@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-1 pt-10 max-w-2xl text-center m-auto">
-    <div class="text-xl text-gray-700">SignIn</div>
+    <div class="text-xl text-gray-700">Sign In</div>
     <div class="text-5xl">Sign in your</div>
     <form @submit="signIn">
       <div class="flex flex-col mt-5">
