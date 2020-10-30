@@ -18,7 +18,13 @@
   </form>
 
   <div>
-    <button @click="socialSubmit" name="google">Google Login</button>
+    <button
+      @click="socialSubmit"
+      name="google"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Google Login
+    </button>
   </div>
 </template>
 <script>
