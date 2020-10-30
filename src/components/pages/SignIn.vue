@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import { auth } from "../compositions/auth";
+import { auth } from "../../compositions/auth";
 export default {
   setup() {
     const { credentials, submit, socialSubmit } = auth();
