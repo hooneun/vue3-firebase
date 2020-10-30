@@ -16,6 +16,14 @@
 	@apply bg-blue-700;
 }
 
+.btn-green {
+	@apply bg-green-500 text-white;
+}
+
+.btn-green:hover {
+	@apply bg-green-700;
+}
+
 label.required::after {
 	padding-left: 5px;
 	color: #c53030;
