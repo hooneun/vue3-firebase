@@ -5,32 +5,18 @@
     <form @submit="signUp" class="pt-4">
       <div class="flex flex-col">
         <label for="name" class="text-left required">Name</label>
-        <input
-          type="text"
-          name="name"
-          required
-          class="border border-gray-400 rounded-md h-8 px-3"
-        />
+        <input type="text" name="name" required />
       </div>
       <div class="flex flex-col mt-5">
         <label for="email" class="text-left required">Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email..."
-          required
-          class="border border-gray-400 rounded-md h-8 px-3"
-          v-model="credentials.email"
-        />
+        <input type="email" name="email" required v-model="credentials.email" />
       </div>
       <div class="flex flex-col mt-5">
         <label for="password" class="text-left required">Password</label>
         <input
           type="password"
           name="password"
-          placeholder="password..."
           required
-          class="border border-gray-400 rounded-md h-8 px-3"
           v-model="credentials.password"
         />
       </div>
