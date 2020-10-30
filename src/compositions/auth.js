@@ -7,7 +7,7 @@ export const auth = () => {
 		password: ''
 	});
 
-	const submit = async (event) => {
+	const signUp = async (event) => {
 		event.preventDefault();
 		let data;
 		try {
@@ -17,7 +17,7 @@ export const auth = () => {
 		}
 	};
 
-	const socialSubmit = async (event) => {
+	const socialSignUp = async (event) => {
 		event.preventDefault();
 		const { target: { name } } = event;
 		let provider;
@@ -31,9 +31,20 @@ export const auth = () => {
 		const data = await firebaseAuth.signInWithPopup(provider);
 	};
 
+	const signIn = async (event) => {
+		let data;
+		try {
+			data = await firebaseAuth.signInWithEmailAndPassword(credentials.email, credentials.password);
+			console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return {
 		credentials,
-		submit,
-		socialSubmit
+		signUp,
+		socialSignUp,
+		signIn
 	};
 };
