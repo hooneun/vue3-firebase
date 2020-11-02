@@ -29,9 +29,10 @@ import { post } from "../../compositions/post";
 import { onMounted } from "vue";
 export default {
   setup() {
-    const { state, getPost, setPost, postList } = post();
+    const { state, getPost, setPost, postList, syncPosts } = post();
     onMounted(() => {
-      getPost();
+      // getPost();
+      syncPosts();
     });
     return {
       state,

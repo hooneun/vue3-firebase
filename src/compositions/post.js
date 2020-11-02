@@ -31,12 +31,14 @@ export const post = () => {
 			.add(state)
 			.then((docRef) => {
 				resetPost();
-				postList.unshift(state);
+				// postList.unshift(state);
 			})
 			.catch((error) => {
 				console.log('error', error);
 			});
 	};
+
+	const getPostById = async (id) => {};
 
 	const resetPost = () => {
 		state.title = '';
@@ -45,10 +47,21 @@ export const post = () => {
 		state.updatedAt = '';
 	};
 
+	const syncPosts = async () => {
+		firebaseStore.collection(COLLECTION).onSnapshot((doc) => {
+			doc.docChanges().forEach((item) => {
+				if (item.type === 'added') {
+					postList.unshift(item.doc.data());
+				}
+			});
+		});
+	};
+
 	return {
 		state,
 		postList,
 		getPost,
-		setPost
+		setPost,
+		syncPosts
 	};
 };
