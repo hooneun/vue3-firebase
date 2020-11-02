@@ -7,8 +7,10 @@ export const post = () => {
 		title: '',
 		desc: '',
 		createdAt: '',
-		updatedAt: ''
+		updatedAt: '',
+		image: ''
 	});
+
 	const postList = reactive([]);
 
 	const getPost = async () => {
@@ -50,11 +52,16 @@ export const post = () => {
 		});
 	};
 
+	const setImage = (file) => {
+		state.image = file;
+	};
+
 	return {
 		state,
 		postList,
 		getPost,
 		setPost,
-		syncPosts
+		syncPosts,
+		setImage
 	};
 };
