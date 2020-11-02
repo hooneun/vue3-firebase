@@ -26,16 +26,9 @@ export const post = () => {
 	const setPost = async () => {
 		state.createdAt = firebaseInstance.firestore.Timestamp.now();
 		state.updatedAt = firebaseInstance.firestore.Timestamp.now();
-		firebaseStore
-			.collection(COLLECTION)
-			.add(state)
-			.then((docRef) => {
-				resetPost();
-				// postList.unshift(state);
-			})
-			.catch((error) => {
-				console.log('error', error);
-			});
+		firebaseStore.collection(COLLECTION).add(state).then((docRef) => {}).catch((error) => {
+			console.log('error', error);
+		});
 	};
 
 	const getPostById = async (id) => {};
